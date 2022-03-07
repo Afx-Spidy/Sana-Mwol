@@ -1,5 +1,5 @@
 const { MessageType, Mimetype } = require('@adiwajshing/baileys');
-const MyPnky = require('../events');
+const Sana = require('../events');
 const Config = require('../config');
 const { igDownloader, igstalk } = require('../scraper.js')
 const { errorMessage, infoMessage } = require('../helpers');
@@ -11,7 +11,7 @@ const got = require("got");
 let wk = Config.WORKTYPE == 'public' ? false : true
 
 
-MyPnky.addCommand({pattern: 'insta ?(.*)', fromMe: wk, desc: "download from Instagram"}, async (message, match) => {
+Sana.addCommand({pattern: 'insta ?(.*)', fromMe: wk, desc: "download from Instagram"}, async (message, match) => {
   try{
     if (!match[1]) return await message.sendMessage("enter a link");
     await message.sendMessage("ꜱᴇᴀʀᴄʜɪɴɢ...")

@@ -1,4 +1,4 @@
-const MyPnky = require('../events');
+const Sana = require('../events');
 const { MessageType, Mimetype, GroupSettingChange, MessageOptions } = require('@adiwajshing/baileys');
 const Axios = require('axios');
 const fs = require('fs');
@@ -28,7 +28,7 @@ if (CON.LANG == 'ML') ADMİN_USER = '*അഡ്‌മിൻ എണ്ണം:*', 
 
 if (CON.STANDPLK == 'off' || CON.STANDPLK == 'OFF') {
 if (CON.WORKTYPE == 'private') {
-    MyPnky.addCommand({ pattern: 'whois$', fromMe: true, desc: Lang.PL_DESC }, async (message, match) => { 
+    Sana.addCommand({ pattern: 'whois$', fromMe: true, desc: Lang.PL_DESC }, async (message, match) => { 
         if (message.jid.endsWith('@g.us')) {
             var json = await message.client.groupMetadataMinimal(message.jid) 
             var code = await message.client.groupInviteCode(message.jid)
@@ -95,7 +95,7 @@ if (CON.WORKTYPE == 'private') {
     });
 }
 else if (CON.WORKTYPE == 'public') {
-    MyPnky.addCommand({ pattern: 'whois$', fromMe: false, desc: Lang.PL_DESC }, async (message, match) => { 
+    Sana.addCommand({ pattern: 'whois$', fromMe: false, desc: Lang.PL_DESC }, async (message, match) => { 
         if (message.jid.endsWith('@g.us')) {
             var json = await message.client.groupMetadataMinimal(message.jid) 
             var code = await message.client.groupInviteCode(message.jid)

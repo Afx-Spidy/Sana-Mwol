@@ -3,7 +3,7 @@ Telegram: t.me/phaticusthiccy
 Instagram: www.instagram.com/kyrie.baran
 */
 
-const MyPnky = require('../events');
+const Sana = require('../events');
 const { MessageType, MessageOptions, Mimetype } = require('@adiwajshing/baileys');
 const fs = require('fs');
 const axios = require('axios');
@@ -15,7 +15,7 @@ const Lang = Language.getString('ttp');
 if (Config.STANDPLK == 'off' || Config.STANDPLK == 'OFF') {
 if (Config.WORKTYPE == 'private') {
 
-    MyPnky.addCommand({ pattern: 'animesay ?(.*)', fromMe: true, desc: Lang.ANIME_DESC }, (async (message, match) => {
+    Sana.addCommand({ pattern: 'animesay ?(.*)', fromMe: true, desc: Lang.ANIME_DESC }, (async (message, match) => {
 
         if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -25,7 +25,7 @@ if (Config.WORKTYPE == 'private') {
 
     }));
 
-    MyPnky.addCommand({ pattern: 'changesay ?(.*)', fromMe: true, desc: Lang.CHANGE_DESC }, (async (message, match) => {
+    Sana.addCommand({ pattern: 'changesay ?(.*)', fromMe: true, desc: Lang.CHANGE_DESC }, (async (message, match) => {
 
         if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -35,7 +35,7 @@ if (Config.WORKTYPE == 'private') {
 
     }));
 
-    MyPnky.addCommand({ pattern: 'trumpsay ?(.*)', fromMe: true, desc: Lang.TRUMP_DESC }, (async (message, match) => {
+    Sana.addCommand({ pattern: 'trumpsay ?(.*)', fromMe: true, desc: Lang.TRUMP_DESC }, (async (message, match) => {
 
         if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -47,7 +47,7 @@ if (Config.WORKTYPE == 'private') {
 }
 else if (Config.WORKTYPE == 'public') {
 
-    MyPnky.addCommand({ pattern: 'animesay ?(.*)', fromMe: false, desc: Lang.ANIME_DESC }, (async (message, match) => {
+    Sana.addCommand({ pattern: 'animesay ?(.*)', fromMe: false, desc: Lang.ANIME_DESC }, (async (message, match) => {
 
         if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -57,7 +57,7 @@ else if (Config.WORKTYPE == 'public') {
 
     }));
 
-    MyPnky.addCommand({ pattern: 'changesay ?(.*)', fromMe: false, desc: Lang.CHANGE_DESC }, (async (message, match) => {
+    Sana.addCommand({ pattern: 'changesay ?(.*)', fromMe: false, desc: Lang.CHANGE_DESC }, (async (message, match) => {
 
         if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -67,7 +67,7 @@ else if (Config.WORKTYPE == 'public') {
 
     }));
 
-    MyPnky.addCommand({ pattern: 'trumpsay ?(.*)', fromMe: false, desc: Lang.TRUMP_DESC }, (async (message, match) => {
+    Sana.addCommand({ pattern: 'trumpsay ?(.*)', fromMe: false, desc: Lang.TRUMP_DESC }, (async (message, match) => {
 
         if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 

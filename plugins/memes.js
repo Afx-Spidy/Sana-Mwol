@@ -1,12 +1,12 @@
 /* Copyright (C) 2020 Yusuf Usta.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
-WhatsMyPnky - Yusuf Usta
+WhatsSana - Yusuf Usta
 Coded by @KursadHD
 re edited by afnanplk
 */
 
-const MyPnky = require('../events');
+const Sana = require('../events');
 const {MessageType, Mimetype} = require('@adiwajshing/baileys');
 const memeMaker = require('meme-maker')
 const fs = require('fs')
@@ -17,7 +17,7 @@ const Lang = Language.getString('memes');
 
 if (Config.WORKTYPE == 'private') {
 
-    MyPnky.addCommand({pattern: 'meme ?(.*)', fromMe: true, desc: Lang.MEMES_DESC}, (async (message, match) => {   
+    Sana.addCommand({pattern: 'meme ?(.*)', fromMe: true, desc: Lang.MEMES_DESC}, (async (message, match) => {   
 
         if (message.reply_message === false) return await message.client.sendMessage(message.jid,Lang.NEED_REPLY, MessageType.text);
         var topText, bottomText;
@@ -43,19 +43,19 @@ if (Config.WORKTYPE == 'private') {
     
 	    memeMaker({
             image: location,         
-            outfile: 'MyPnky-meme.png',
+            outfile: 'Sana-meme.png',
             topText: topText,
             bottomText: bottomText,
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('MyPnky-meme.png'), MessageType.image, {filename: 'MyPnky-meme.png', mimetype: Mimetype.png, caption: Config.AFN});
+            await message.client.sendMessage(message.jid, fs.readFileSync('Sana-meme.png'), MessageType.image, {filename: 'Sana-meme.png', mimetype: Mimetype.png, caption: Config.AFN});
             await info.delete();    
         });
     }));
 }
 else if (Config.WORKTYPE == 'public') {
 
-    MyPnky.addCommand({pattern: 'meme ?(.*)', fromMe: false, desc: Lang.MEMES_DESC}, (async (message, match) => {    
+    Sana.addCommand({pattern: 'meme ?(.*)', fromMe: false, desc: Lang.MEMES_DESC}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.client.sendMessage(message.jid,Lang.NEED_REPLY, MessageType.text);
 	 if (match[1].includes('{1}')) {    
@@ -442,12 +442,12 @@ else if (Config.WORKTYPE == 'public') {
     
 	    memeMaker({
             image: location,         
-            outfile: 'MyPnky-meme.png',
+            outfile: 'Sana-meme.png',
             topText: topText,
             bottomText: bottomText,
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('MyPnky-meme.png'), MessageType.image, {filename: 'MyPnky-meme.png', mimetype: Mimetype.png, caption: Config.AFN});
+            await message.client.sendMessage(message.jid, fs.readFileSync('Sana-meme.png'), MessageType.image, {filename: 'Sana-meme.png', mimetype: Mimetype.png, caption: Config.AFN});
             await info.delete();    
         });
     }		    
